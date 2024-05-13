@@ -49,9 +49,11 @@ void QuoteChain::PrintChain(block* head) {
         blockNumber++;
         temp = temp->next;
     }
-
+    std::cout << "Block " << blockNumber << std::endl;
     std::cout << "Quote: " << temp->quote << std::endl;
+    std::cout << "Nonce: " << GetNonce(temp->nonce) << std::endl;
     std::cout << "Hash: " << temp->blockhash << std::endl;
+    std::cout << std::endl;
 }
 
 std::vector<std::string> QuoteChain::ReadQuotesFromFile(const std::string& filePath) {

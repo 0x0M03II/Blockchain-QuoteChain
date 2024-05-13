@@ -1,3 +1,4 @@
+#include <iostream>
 #include "quotechain.h"
 
 int main(void) {
@@ -6,6 +7,18 @@ int main(void) {
 
     // Genesis Block
     QuoteChain chain("quotes.txt");
+
+    // Intro Message
+    std::cout << "================================" << std::endl;
+    std::cout << "========== QuoteChain ==========" << std::endl;
+    std::cout << "================================" << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "================================" << std::endl;
+    std::cout << "Hashing:  Hash(Bn) = Hash(Hash(Bn - 1) || nonce || quote)" << std::endl;
+    std::cout << "Proof-of-Work:  First 5 bits = 0" << std::endl;
+    std::cout << "================================" << std::endl;
+    std::cout << std::endl;
 
     std::string quoteGen = chain.GenerateQuote();
     std::vector<uint8_t> nonceGen = chain.GenerateNonce();
